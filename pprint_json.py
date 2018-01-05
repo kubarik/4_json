@@ -1,4 +1,5 @@
 import json
+import sys
 
 
 def load_data(filepath):
@@ -6,11 +7,12 @@ def load_data(filepath):
         return json.load(file_handler)
 
 
-def pretty_print_json(data):
-    return json.dumps(deserializesJson, skipkeys=False, ensure_ascii=False, indent=4)
+def pretty_print_json(deserializesjson):
+    return json.dumps(deserializesjson, skipkeys=False, ensure_ascii=False, indent=4)
 
 
 if __name__ == '__main__':
-    deserializesJson = load_data('') # указать путь к файлу
-    if (deserializesJson):
-        print (pretty_print_json(deserializesJson))
+    filepath = sys.argv[1]
+    deserializesjson = load_data(filepath)
+    if (deserializesjson):
+        print (pretty_print_json(deserializesjson))

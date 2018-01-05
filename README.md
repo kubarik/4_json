@@ -1,8 +1,8 @@
-# Prettify JSON
+# Форматирование json
 
 Вывод JSON содержимое в консоль в удобном для чтения виде: добавляет переносы строк, отступы слева и пробелы.
 
-# Quickstart
+# Как использовать
 
 Сначала получаем десериализацию JSON, с помощью функции:
 ```python
@@ -13,11 +13,16 @@ load_data(filepath)
 
 В случае успеха, выполняется функция преобразования JSON в читаемый удобный вид:
 ```python
-pretty_print_json(data)
+pretty_print_json(deserializesjson)
 ```
 где
-  data - JSON, загруженный из файла.
+  deserializesjson - JSON, загруженный из файла.
 
+Импортируемые модули
+```python
+import json #кодирование и декодирование данных
+import sys #доступ к переменным
+```
 
 ```bash
 
@@ -27,7 +32,7 @@ pretty_print_json(data)
 
 ```bash
 
-Ответ
+Запус и ответ
 $ python pprint_json.py <path to file>
 {
     "name": "John",
@@ -40,6 +45,6 @@ $ python pprint_json.py <path to file>
 }
 ```
 
-# Project Goals
+# Цели проекта
 
-The code is written for educational purposes. Training course for web-developers - [DEVMAN.org](https://devman.org)
+Код создан в учебных целях. В рамках учебного курса по веб-разработке ― [DEVMAN.org](https://devman.org)

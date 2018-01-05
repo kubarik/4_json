@@ -1,18 +1,43 @@
 # Prettify JSON
 
-[TODO. There will be project description]
+Вывод JSON содержимое в консоль в удобном для чтения виде: добавляет переносы строк, отступы слева и пробелы.
 
 # Quickstart
 
-[TODO]
+Сначала получаем десериализацию JSON, с помощью функции:
+```python
+load_data(filepath)
+```
+где
+  filepath - путь до файла с произвольными данными в формате JSON.
 
-Example of script launch on Linux, Python 3.5:
+В случае успеха, выполняется функция преобразования JSON в читаемый удобный вид:
+```python
+pretty_print_json(data)
+```
+где
+  data - JSON, загруженный из файла.
+
 
 ```bash
 
-$ python pprint_json.py <path to file>
-# TODO add output example
+Входный данные
+{"name":"John","age":30,"cars":[ "Ford","BMW","Fiat"]}
+```
 
+```bash
+
+Ответ
+$ python pprint_json.py <path to file>
+{
+    "name": "John",
+    "age": 30,
+    "cars": [
+        "Ford",
+        "BMW",
+        "Fiat"
+    ]
+}
 ```
 
 # Project Goals

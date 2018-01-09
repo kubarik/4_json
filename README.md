@@ -13,10 +13,10 @@ load_data(filepath)
 
 В случае успеха, выполняется функция преобразования JSON в читаемый удобный вид:
 ```python
-pretty_print_json(deserializesjson)
+pretty_print_json(deserializes_json)
 ```
 где
-  deserializesjson - JSON, загруженный из файла.
+  deserializes_json - JSON, загруженный из файла.
 
 Импортируемые модули
 ```python

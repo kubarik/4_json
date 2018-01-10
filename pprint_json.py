@@ -2,25 +2,26 @@ import json
 import sys
 
 
-def load_data(filepath):
+def load_data(file_path):
     try:
-        file_handler = open(filepath, 'r')
-        try:
-            return json.load(open(filepath))
-        finally:
-            file_handler.close()
-    except OSError as ex:
-        print("Не могу прочитать файл", filepath, ": Ошибка ", ex)
+        with open(file_path, 'r') as file_handler:
+            return json.load(file_handler)
+    except OSError:
+        return False
 
-def pretty_print_json(deserializes_json):
-    return json.dumps(deserializes_json, ensure_ascii=False, indent=4)
+
+def pretty_print_json(json_str):
+    return json.dumps(json_str, ensure_ascii=False, indent=4)
+
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
-        print ('Не указан файл')
+        print('Не указан файл')
         sys.exit()
 
-    filepath = sys.argv[1]
-    deserializes_json = load_data(filepath)
-    if deserializes_json:
-        print (pretty_print_json(deserializes_json))
+    input_file_path = sys.argv[1]
+    no_pretty_json = load_data(input_file_path)
+    if no_pretty_json:
+        print(pretty_print_json(no_pretty_json))
+    else:
+        print("Не могу прочитать файл", input_file_path)

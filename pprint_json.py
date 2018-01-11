@@ -10,18 +10,17 @@ def load_data(file_path):
         return False
 
 
-def pretty_print_json(json_str):
-    return json.dumps(json_str, ensure_ascii=False, indent=4)
+def pretty_print_json(data):
+    return json.dumps(data, ensure_ascii=False, indent=4)
 
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
-        print('Не указан файл')
-        sys.exit()
+        sys.exit('Не указан файл')
 
     input_file_path = sys.argv[1]
-    no_pretty_json = load_data(input_file_path)
-    if no_pretty_json:
-        print(pretty_print_json(no_pretty_json))
+    response = load_data(input_file_path)
+    if response:
+        print(pretty_print_json(response))
     else:
         print("Не могу прочитать файл", input_file_path)

@@ -10,8 +10,8 @@ def load_data(file_path):
         return False
 
 
-def pretty_print_json(data):
-    return json.dumps(data, ensure_ascii=False, indent=4)
+def pretty_print_json(unformat_obj):
+    return json.dumps(unformat_obj, ensure_ascii=False, indent=4)
 
 
 if __name__ == '__main__':

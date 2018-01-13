@@ -10,8 +10,8 @@ def load_data(file_path):
         return False
 
 
-def pretty_print_json(unformat_obj):
-    return json.dumps(unformat_obj, ensure_ascii=False, indent=4)
+def pretty_print_json(deserializes_json_obj):
+    return json.dumps(deserializes_json_obj, ensure_ascii=False, indent=4)
 
 
 if __name__ == '__main__':
@@ -19,8 +19,8 @@ if __name__ == '__main__':
         sys.exit('Не указан файл')
 
     input_file_path = sys.argv[1]
-    response = load_data(input_file_path)
+    deserializes_json = load_data(input_file_path)
     if response:
-        print(pretty_print_json(response))
+        print(pretty_print_json(deserializes_json))
     else:
         print("Не могу прочитать файл", input_file_path)

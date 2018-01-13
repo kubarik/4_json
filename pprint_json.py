@@ -20,7 +20,7 @@ if __name__ == '__main__':
 
     input_file_path = sys.argv[1]
     deserializes_json = load_data(input_file_path)
-    if response:
+    if deserializes_json:
         print(pretty_print_json(deserializes_json))
     else:
         print("Не могу прочитать файл", input_file_path)
